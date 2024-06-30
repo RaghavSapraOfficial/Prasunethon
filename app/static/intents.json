@@ -1,0 +1,577 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Howdy",
+        "Hi there",
+        "Hello there",
+        "Hey there",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Hey, how are you?"
+      ],
+      "responses": [
+        "Hello! How can I support you today?",
+        "Hi there! How are you feeling?",
+        "Hey! What's on your mind?",
+        "Howdy! How can I assist you?",
+        "Hi there! Nice to see you.",
+        "Hello! How's your day going?",
+        "Hey! How's everything?"
+      ]
+    },
+    {
+      "tag": "feeling_down",
+      "patterns": [
+        "I'm feeling sad",
+        "Feeling down",
+        "I feel depressed",
+        "Feeling low",
+        "Sad today"
+      ],
+      "responses": [
+        "I'm sorry to hear that. It's okay to feel this way sometimes. Would you like to talk about what's bothering you?",
+        "It's alright to feel sad. You're not alone. Is there anything specific on your mind that you'd like to discuss?",
+        "I understand. It's important to acknowledge your feelings. Is there something in particular that's been troubling you?"
+      ]
+    },
+    {
+      "tag": "anxiety",
+      "patterns": [
+        "I'm anxious",
+        "Feeling anxious",
+        "Anxiety",
+        "I have anxiety"
+      ],
+      "responses": [
+        "Anxiety can be tough. Remember to take deep breaths and try to focus on something calming. Is there a specific situation causing you anxiety?",
+        "I'm here to help you through this. What usually helps you when you're feeling anxious?",
+        "You're not alone in feeling this way. Is there a particular reason you're feeling anxious right now?"
+      ]
+    },
+    {
+      "tag": "stress_management",
+      "patterns": [
+        "How to manage stress?",
+        "Tips for stress relief",
+        "Reducing stress",
+        "Coping with stress"
+      ],
+      "responses": [
+        "There are many ways to manage stress, such as deep breathing, exercise, and talking to someone you trust. What activities do you find helpful for managing stress?",
+        "Managing stress is important for your well-being. Have you tried relaxation techniques like meditation or yoga?",
+        "Stress management is key. Taking breaks, setting boundaries, and practicing self-care can help. What methods have worked best for you in the past?"
+      ]
+    },
+    {
+      "tag": "therapy_recommendation",
+      "patterns": [
+        "Do I need therapy?",
+        "Should I see a therapist?",
+        "Recommend a therapist",
+        "How to find a therapist"
+      ],
+      "responses": [
+        "Therapy can be beneficial for many people. It may help to talk to a professional about what you're experiencing. Would you like guidance on finding a therapist?",
+        "Seeing a therapist can provide support and strategies for coping. Are you interested in exploring therapy options?",
+        "Talking to a therapist can offer valuable insights and support. I can help you find resources for finding a therapist."
+      ]
+    },
+    {
+      "tag": "self_care",
+      "patterns": [
+        "Self-care tips",
+        "How to practice self-care",
+        "Self-care strategies",
+        "Taking care of myself"
+      ],
+      "responses": [
+        "Self-care is important for your mental and emotional well-being. What activities do you enjoy that help you relax and recharge?",
+        "Taking time for self-care can improve your mood and reduce stress. How do you currently practice self-care?",
+        "Self-care involves activities that nurture your mind, body, and spirit. What self-care practices have you found most helpful?"
+      ]
+    },
+    {
+      "tag": "support_groups",
+      "patterns": [
+        "Support groups near me",
+        "Joining a support group",
+        "Support group recommendation",
+        "Local support groups"
+      ],
+      "responses": [
+        "Support groups can provide understanding and connection with others going through similar experiences. Would you like information on finding local support groups?",
+        "Joining a support group can offer valuable peer support and resources. Are you interested in exploring support group options?",
+        "Support groups can be a helpful way to share experiences and receive support from others who understand. I can help you find support groups in your area."
+      ]
+    },
+    {
+      "tag": "positive_affirmations",
+      "patterns": [
+        "Positive affirmations",
+        "Affirmations for positivity",
+        "Daily affirmations"
+      ],
+      "responses": [
+        "Positive affirmations can help improve your mindset and self-esteem. Would you like to hear some affirmations?",
+        "Affirmations can shift your focus to positive thoughts. Here are a few affirmations to start your day with positivity: [Affirmation examples]",
+        "Daily affirmations can reinforce a positive outlook. Here are some affirmations you might find uplifting: [Affirmation examples]"
+      ]
+    },
+    {
+      "tag": "mental_health_education",
+      "patterns": [
+        "Learn about mental health",
+        "Understanding mental health",
+        "Mental health information"
+      ],
+      "responses": [
+        "Understanding mental health can empower you to take care of your well-being. What specific information are you interested in?",
+        "Learning about mental health can help reduce stigma and promote mental wellness. What aspects of mental health would you like to explore?",
+        "Education about mental health is important for everyone. I can provide information and resources on various mental health topics."
+      ]
+    },
+    {
+      "tag": "crisis_support",
+      "patterns": [
+        "Emergency mental health support",
+        "Crisis hotline",
+        "Urgent help",
+        "Help in a crisis"
+      ],
+      "responses": [
+        "If you are in crisis or need immediate support, please contact a crisis hotline or emergency services. Here are some resources: [Hotline numbers]",
+        "In a crisis, it's important to reach out for help. Please consider contacting a crisis hotline for immediate support: [Hotline numbers]",
+        "If you need urgent help, please don't hesitate to reach out to a crisis support service. Here are some resources that can provide assistance: [Hotline numbers]"
+      ]
+    },
+    {
+      "tag": "mindfulness",
+      "patterns": [
+        "Mindfulness techniques",
+        "Practicing mindfulness",
+        "Mindful living",
+        "Mindfulness exercises"
+      ],
+      "responses": [
+        "Mindfulness practices can help reduce stress and improve focus. Have you tried mindfulness exercises like meditation or deep breathing?",
+        "Mindfulness involves being present in the moment. How do you currently practice mindfulness in your daily life?",
+        "Practicing mindfulness can promote emotional well-being. Would you like to learn more about mindfulness techniques?"
+      ]
+    },
+    {
+      "tag": "sleep_quality",
+      "patterns": [
+        "Improve sleep quality",
+        "Better sleep tips",
+        "Sleep problems",
+        "Insomnia help"
+      ],
+      "responses": [
+        "Improving sleep quality is important for overall health. Have you tried creating a bedtime routine or limiting screen time before bed?",
+        "Good sleep hygiene can help improve sleep quality. What techniques have you tried to enhance your sleep?",
+        "Addressing sleep issues is essential for well-being. I can suggest tips to promote better sleep habits if you're interested."
+      ]
+    },
+    {
+      "tag": "loneliness",
+      "patterns": [
+        "Feeling lonely",
+        "I'm lonely",
+        "Dealing with loneliness",
+        "Loneliness"
+      ],
+      "responses": [
+        "Feeling lonely is a common experience. Reach out to friends, family, or a support network to connect with others.",
+        "Loneliness can be challenging. Is there someone you can reach out to for companionship or support?",
+        "You're not alone in feeling lonely. Connecting with others or engaging in activities you enjoy can help."
+      ]
+    },
+    {
+      "tag": "nutrition_and_mental_health",
+      "patterns": [
+        "Nutrition for mental health",
+        "Diet and mood",
+        "Healthy eating for mental well-being"
+      ],
+      "responses": [
+        "Nutrition plays a role in mental health. Eating a balanced diet with plenty of fruits, vegetables, and whole grains can support emotional well-being.",
+        "Healthy eating habits can positively impact mood and energy levels. Are you interested in learning more about nutrition for mental health?",
+        "Eating nutritious foods is important for mental well-being. I can provide tips on incorporating foods that support mental health into your diet."
+      ]
+    },
+    {
+      "tag": "exercise_and_mental_health",
+      "patterns": [
+        "Exercise benefits for mental health",
+        "Physical activity for mood",
+        "Workouts for mental well-being"
+      ],
+      "responses": [
+        "Regular exercise can boost mood and reduce symptoms of stress and anxiety. What types of physical activity do you enjoy?",
+        "Physical activity releases endorphins that can improve mood and reduce feelings of anxiety. Have you incorporated exercise into your routine?",
+        "Exercise is beneficial for mental and physical health. I can suggest exercises that promote well-being if you're interested."
+      ]
+    },
+    {
+      "tag": "coping_skills",
+      "patterns": [
+        "Developing coping skills",
+        "Coping strategies",
+        "Dealing with challenges",
+        "How to cope"
+      ],
+      "responses": [
+        "Developing coping skills can help manage stress and navigate challenges. What strategies have you tried in the past?",
+        "Coping skills are important for resilience. How do you currently cope with difficult situations?",
+        "Learning effective coping strategies can enhance your ability to handle stress. I can suggest techniques to build resilience."
+      ]
+    },
+    {
+      "tag": "relationships",
+      "patterns": [
+        "Improving relationships",
+        "Relationship advice",
+        "Building healthy relationships",
+        "Family issues"
+      ],
+      "responses": [
+        "Building healthy relationships is important for well-being. How do you approach communication and connection in your relationships?",
+        "Relationships play a significant role in mental health. Are there specific challenges you're facing in your relationships?",
+        "Healthy relationships contribute to overall happiness. I can provide tips on improving communication and fostering positive connections."
+      ]
+    },
+    {
+      "tag": "body_image",
+      "patterns": [
+        "Body image issues",
+        "Improving body image",
+        "Self-esteem and appearance",
+        "Feeling insecure about body"
+      ],
+      "responses": [
+        "Body image concerns are common. Remember that beauty comes in many forms. What helps you feel more confident about your appearance?",
+        "Self-esteem is influenced by many factors, including body image. How do you view yourself?",
+        "Improving body image involves accepting yourself and focusing on your strengths. I can suggest strategies for boosting self-esteem."
+      ]
+    },
+    {
+      "tag": "work_life_balance",
+      "patterns": [
+        "Achieving work-life balance",
+        "Balancing work and personal life",
+        "Time management tips",
+        "Managing work stress"
+      ],
+      "responses": [
+        "Work-life balance is crucial for mental well-being. How do you currently manage your time between work and personal life?",
+        "Balancing responsibilities can reduce stress and improve overall satisfaction. What challenges do you face in achieving work-life balance?",
+        "Managing work stress is important. I can provide strategies for setting boundaries and prioritizing self-care."
+      ]
+    },
+    {
+      "tag": "parenting_support",
+      "patterns": [
+        "Parenting advice",
+        "Support for parents",
+        "Parenting challenges",
+        "Raising children"
+      ],
+      "responses": [
+        "Parenting can be challenging. What aspects of parenting are you finding difficult?",
+        "Support for parents is essential. How can I assist you with your parenting concerns?",
+        "Parenting involves many ups and downs. I can provide guidance on navigating parenting challenges."
+      ]
+    },
+    {
+      "tag": "student_mental_health",
+      "patterns": [
+        "Support for students",
+        "Student stress",
+        "College mental health",
+        "Exam anxiety"
+      ],
+      "responses": [
+        "Student life can be stressful. How are you coping with academic pressure?",
+        "College mental health is important. What resources do you have access to for support?",
+        "Managing exam anxiety is common among students. I can suggest strategies for reducing stress during exams."
+      ]
+    },
+    {
+      "tag": "trauma_recovery",
+      "patterns": [
+        "Trauma support",
+        "Recovering from trauma",
+        "Dealing with past trauma",
+        "PTSD help"
+      ],
+      "responses": [
+        "Recovering from trauma takes time and support. How can I assist you in your healing journey?",
+        "Dealing with past trauma can be challenging. Are you currently receiving support or counseling?",
+        "Support is available for trauma recovery. I can provide resources and strategies for coping with PTSD."
+      ]
+    },
+    {
+      "tag": "substance_abuse",
+      "patterns": [
+        "Dealing with addiction",
+        "Substance abuse support",
+        "Help for addicts",
+        "Recovery from addiction"
+      ],
+      "responses": [
+        "Addiction recovery is a journey. How can I support you in seeking help?",
+        "Substance abuse is a serious issue. Are you open to discussing treatment options or support groups?",
+        "Recovery from addiction is possible with the right support. I can provide information on resources for addiction recovery."
+      ]
+    },
+    {
+      "tag": "suicide_prevention",
+      "patterns": [
+        "Help for suicidal thoughts",
+        "Suicide prevention resources",
+        "Support for suicidal individuals",
+        "I want to end my life"
+      ],
+      "responses": [
+        "If you're experiencing suicidal thoughts, please reach out to a crisis hotline or mental health professional immediately. Here are some resources: [Hotline numbers]",
+        "Suicide prevention is critical. Please consider talking to a trusted person or seeking professional help. You're not alone in this.",
+        "It's important to seek help if you're feeling suicidal. I can provide resources and support to assist you during this challenging time."
+      ]
+    },
+    {
+      "tag": "anger_management",
+      "patterns": [
+        "Anger management techniques",
+        "Controlling anger",
+        "Dealing with anger issues",
+        "Angry all the time"
+      ],
+      "responses": [
+        "Managing anger involves recognizing triggers and practicing relaxation techniques. What helps you calm down when you're angry?",
+        "Anger is a normal emotion, but managing it constructively is important. How do you typically cope with anger?",
+        "Learning effective anger management techniques can improve your relationships and well-being. I can suggest strategies for managing anger."
+      ]
+    },
+    {
+      "tag": "mental_health_stigma",
+      "patterns": [
+        "Reducing mental health stigma",
+        "Challenging stigma",
+        "Mental illness stigma",
+        "End the stigma"
+      ],
+      "responses": [
+        "Reducing stigma starts with education and open conversations about mental health. How can we work together to challenge stigma?",
+        "Mental health stigma affects many people. What actions can we take to promote understanding and acceptance?",
+        "Ending stigma involves promoting empathy and supporting those affected by mental health challenges. Let's discuss ways to combat stigma."
+      ]
+    },
+    {
+      "tag": "gender_identity_support",
+      "patterns": [
+        "Gender identity support",
+        "Transgender support",
+        "LGBTQ+ mental health",
+        "Non-binary identity"
+      ],
+      "responses": [
+        "Support for gender identity is crucial. How can I assist you in finding resources or support?",
+        "LGBTQ+ mental health is important. Are there specific concerns or challenges you'd like to discuss?",
+        "Navigating gender identity can be complex. I can provide resources and support to help you on your journey."
+      ]
+    },
+    {
+      "tag": "digital_wellbeing",
+      "patterns": [
+        "Digital detox tips",
+        "Managing screen time",
+        "Technology addiction",
+        "Social media impact on mental health"
+      ],
+      "responses": [
+        "Digital well-being is essential for mental health. Have you considered setting boundaries or taking breaks from screens?",
+        "Managing screen time can improve sleep and reduce stress. What strategies have you tried for digital detox?",
+        "Balancing technology use is important for well-being. I can suggest tips for promoting digital well-being."
+      ]
+    },
+    {
+      "tag": "aging_and_mental_health",
+      "patterns": [
+        "Mental health in older adults",
+        "Coping with aging",
+        "Elderly mental health",
+        "Loneliness in seniors"
+      ],
+      "responses": [
+        "Maintaining mental health as we age is important. How can I support you or a loved one in aging gracefully?",
+        "Coping with aging involves addressing mental health needs. What aspects of aging are you or a family member experiencing?",
+        "Loneliness among seniors is common. I can provide resources and strategies for promoting social connections and mental well-being."
+      ]
+    },
+    {
+      "tag": "career_counseling",
+      "patterns": [
+        "Career advice",
+        "Job stress",
+        "Career change support",
+        "Professional development"
+      ],
+      "responses": [
+        "Career counseling can help navigate job stress and career decisions. How can I assist you with your career goals?",
+        "Job stress is common. Are you considering a career change or seeking strategies for managing stress at work?",
+        "Professional development is important for career satisfaction. I can provide guidance on advancing your career."
+      ]
+    },
+    {
+      "tag": "creative_expression",
+      "patterns": [
+        "Art therapy benefits",
+        "Creative outlets for emotions",
+        "Expressing feelings through art",
+        "Writing for mental health"
+      ],
+      "responses": [
+        "Creative expression can be therapeutic. How do you enjoy expressing yourself creatively?",
+        "Art therapy and creative activities can help process emotions. Have you tried using art or writing as an outlet?",
+        "Exploring creative outlets can support emotional well-being. I can suggest ways to incorporate creative expression into your routine."
+      ]
+    },
+    {
+      "tag": "spirituality_and_wellness",
+      "patterns": [
+        "Spiritual well-being",
+        "Mindfulness practices",
+        "Connecting with spirituality",
+        "Prayer for mental health"
+      ],
+      "responses": [
+        "Spirituality can provide comfort and support. How do you nurture your spiritual well-being?",
+        "Mindfulness and spiritual practices can promote inner peace. Have you explored ways to connect with your spirituality?",
+        "Connecting with your spirituality can enhance overall wellness. I can suggest practices to support your spiritual journey."
+      ]
+    },
+    {
+      "tag": "chronic_illness_support",
+      "patterns": [
+        "Living with chronic illness",
+        "Support for chronic conditions",
+        "Managing chronic pain",
+        "Coping with long-term illness"
+      ],
+      "responses": [
+        "Living with a chronic illness can be challenging. How can I support you in managing your health?",
+        "Support for chronic conditions is important. Are there specific aspects of your illness that you find particularly challenging?",
+        "Coping with a chronic illness involves self-care and support. I can provide resources and strategies for managing your health."
+      ]
+    },
+    {
+      "tag": "caregiver_support",
+      "patterns": [
+        "Support for caregivers",
+        "Caregiver stress",
+        "Caring for aging parents",
+        "Balancing caregiving and personal life"
+      ],
+      "responses": [
+        "Caregiving can be demanding. How do you manage stress while caring for others?",
+        "Support for caregivers is essential. What challenges are you facing in your caregiving role?",
+        "Balancing caregiving responsibilities with personal well-being is important. I can provide strategies for caregiver self-care."
+      ]
+    },
+    {
+      "tag": "resilience_building",
+      "patterns": [
+        "Building resilience",
+        "Overcoming adversity",
+        "Strengthening mental toughness",
+        "Adapting to challenges"
+      ],
+      "responses": [
+        "Building resilience is key to navigating life's challenges. How do you approach adversity?",
+        "Overcoming adversity strengthens resilience. What strategies have helped you bounce back from difficult situations?",
+        "Developing mental toughness can help you adapt to challenges. I can suggest resilience-building exercises and strategies."
+      ]
+    },
+    {
+      "tag": "mind-body_connection",
+      "patterns": [
+        "Mind-body wellness",
+        "Holistic health practices",
+        "Body-mind connection",
+        "Integrated health approaches"
+      ],
+      "responses": [
+        "Mind-body practices can enhance overall wellness. How do you incorporate holistic health into your life?",
+        "Exploring the mind-body connection can improve health outcomes. Have you tried integrating holistic practices?",
+        "Holistic health approaches consider the whole person. I can suggest mind-body techniques to support your well-being."
+      ]
+    },
+    {
+      "tag": "raghav",
+      "patterns": ["raghav"],
+      "responses": ["great brother"]
+    },
+    {
+      "tag": "peer_support",
+      "patterns": [
+        "Peer support groups",
+        "Connecting with peers",
+        "Peer counseling",
+        "Support from others"
+      ],
+      "responses": [
+        "Peer support groups provide understanding and connection. Would you like information on finding local peer support?",
+        "Connecting with peers can offer valuable support. Are you interested in joining a peer support group?",
+        "Peer counseling can provide empathy and shared experiences. I can help you find peer support resources."
+      ]
+    },
+    {
+      "tag": "body_mindfulness",
+      "patterns": [
+        "Body mindfulness exercises",
+        "Awareness of body sensations",
+        "Mindful movement practices",
+        "Yoga for mental health"
+      ],
+      "responses": [
+        "Body mindfulness enhances awareness of physical sensations. Have you explored mindful movement or yoga?",
+        "Mindful practices like yoga promote body awareness and relaxation. How do you currently practice body mindfulness?",
+        "Incorporating body mindfulness exercises can support mental and physical well-being. I can suggest techniques to enhance body awareness."
+      ]
+    },
+    {
+      "tag": "goal_setting",
+      "patterns": [
+        "Setting personal goals",
+        "Achieving life goals",
+        "SMART goals",
+        "Long-term goal planning"
+      ],
+      "responses": [
+        "Setting goals can provide direction and motivation. What personal or professional goals are you working towards?",
+        "Achieving life goals requires planning and perseverance. How do you approach goal setting?",
+        "Setting SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound) can help you succeed. I can assist with goal planning."
+      ]
+    },
+    {
+      "tag": "laughter_therapy",
+      "patterns": [
+        "Laughter therapy benefits",
+        "Humor for mental health",
+        "Laughter yoga",
+        "Jokes for stress relief"
+      ],
+      "responses": [
+        "Laughter can reduce stress and improve mood. How do you incorporate humor into your daily life?",
+        "Humor and laughter can boost emotional well-being. Have you tried laughter therapy or laughter yoga?",
+        "Laughing regularly has positive effects on mental health. I can suggest ways to add more laughter to your day."
+      ]
+    }
+  ]
+}

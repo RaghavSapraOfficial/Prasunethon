@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Helvetica, sans-serif;
+            background: #121212;
+            color: #e0e0e0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            background-color: #2c2f33;
+            color: white;
+            padding: 20px;
+            width: 250px;
+            overflow: hidden;
+            transition: width 0.3s;
+        }
+
+        .sidebar.collapsed {
+            width: 60px;
+        }
+
+        .sidebar.collapsed ul li a {
+            font-size: 12px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            background-color: #3a3f44;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #575d63;
+        }
+
+        .toggle-button {
+            background-color: #3a3f44;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        /* Page content styles */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        header {
+            background-color: #3a3f44;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .navbar {
+            background-color: #272728;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #575d63;
+        }
+
+        .navbar .right {
+            display: flex;
+        }
+
+        .navbar .right a {
+            margin-left: 10px;
+        }
+
+        .container {
+            flex: 1;
+            margin: 20px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            color: #e0e0e0;
+        }
+
+        #chat-container {
+            height: 100%;
+            overflow-y: auto;
+            border: 1px solid #1e1e1e;
+            padding: 10px;
+            background-color: #1e1e1e;
+            flex: 1;
+        }
+
+        .message {
+            margin-bottom: 5px;
+            padding: 8px;
+            border-radius: 5px;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            text-align: right;
+            background-color: #575d63;
+            color: white;
+        }
+
+        .bot-message {
+            text-align: left;
+            background-color: #333;
+            color: white;
+        }
+
+        .message-text {
+            margin: 0;
+        }
+
+        input[type="text"] {
+            width: 72%;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        button[type="submit"] {
+            width: 15%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #252627;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .loading-dots {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            animation: blink 1s infinite both;
+        }
+
+        .loading-dots:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .loading-dots:nth-child(3) {
+            animation-delay: 4s;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button class="toggle-button" id="toggle-sidebar">☰</button>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        <!-- Header -->
+        <header>
+            Welcome to ChatBot
+        </header>
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <div>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="right">
+                <a href="#">Login</a>
+                <a href="#">Sign Up</a>
+            </div>
+        </div>
+
+        <!-- Page content -->
+        <div class="container">
+            <h1 style="text-align: center;">Mental Health Chatbot</h1>
+
+            <div id="chat-container" role="log" aria-live="polite">
+                <!-- Chat history will be appended here -->
+            </div>
+
+            <form id="chat-form" action="/get_response" method="POST" aria-label="Chat form">
+                <input type="text" id="user-input" name="user_input" placeholder="Type your message..."
+                    aria-label="Type your message">
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z" />
+                        <path fill-rule="evenodd"
+                            d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 ChatBot. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#toggle-sidebar').click(function () {
+                $('.sidebar').toggleClass('collapsed');
+            });
+
+            $('#chat-form').submit(function (event) {
+                event.preventDefault();
+                var userInput = $('#user-input').val();
+                $('#user-input').val(''); // Clear input field
+
+                // Append user message to chat history
+                $('#chat-container').append('<div class="message user-message"><p class="message-text">' + userInput + '</p></div>');
+
+                // Append loading dots to chat history
+                var loadingDots = '<div class="message bot-message loading"><span class="loading-dots"></span><span class="loading-dots"></span><span class="loading-dots"></span></div>';
+                $('#chat-container').append(loadingDots);
+
+                // Scroll to bottom of chat container
+                $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight);
+
+                $.ajax({
+                    url: '/get_response',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ user_input: userInput }),
+                    success: function (response) {
+                        // Remove loading dots
+                        $('#chat-container .loading').remove();
+
+                        // Append bot response to chat history with fade-in effect
+                        $('#chat-container').append('<div class="message bot-message" style="display: none;"><p class="message-text">' + response.bot_response + '</p></div>');
+                        $('.bot-message').last().fadeIn(300); // Fade in effect
+
+                        // Scroll to bottom of chat container
+                        $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight);
+                    },
+                    error: function (error) {
+                        console.error('Error:', error);
+                        $('#chat-container .loading').remove();
+                        $('#chat-container').append('<div class="message bot-message"><p class="message-text">Error: Unable to get response. Please try again.</p></div>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
